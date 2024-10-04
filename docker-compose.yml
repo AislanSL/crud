@@ -1,0 +1,15 @@
+
+services:
+  db:
+    image: postgres:alpine
+    ports:
+      - "5435:5432"  # Corrigido a formatação
+    container_name: "postgres"
+    volumes:
+      - ./eventos:/var/lib/postgresql/data  # Corrigido a formatação
+    environment:
+      POSTGRES_USER: user  # Corrigido o nome da variável
+      POSTGRES_PASSWORD: password  # Corrigido o nome da variável
+
+volumes:
+  eventos:  # Este volume não é necessário, pois o caminho é local
